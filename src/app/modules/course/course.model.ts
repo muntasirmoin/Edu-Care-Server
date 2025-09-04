@@ -1,12 +1,13 @@
 import { Schema, model } from "mongoose";
-import { ICourse } from "./course.interface";
+import { CourseCategory, ICourse } from "./course.interface";
 
 const courseSchema = new Schema<ICourse>(
   {
     title: { type: String, required: true, trim: true },
     description: { type: String },
-    category: { type: String },
+    category: { type: String, enum: Object.values(CourseCategory) },
     price: { type: Number, required: true, default: 0 }, // 0 = free
+    seat: { type: Number, required: true, default: 0 },
     duration: { type: Number },
     instructor: { type: String }, //  later  ObjectId ref to User
     image: { type: String },

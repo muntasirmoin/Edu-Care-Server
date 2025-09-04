@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { CourseCategory } from "./course.interface";
 
 // Create Course Validation
 export const createCourseZodSchema = z.object({
@@ -12,11 +13,10 @@ export const createCourseZodSchema = z.object({
     .max(500, { message: "Description cannot exceed 500 characters." })
     .optional(),
 
-  category: z
-    .string()
-    .max(50, { message: "Category cannot exceed 50 characters." })
-    .optional(),
-
+  category: z.enum(Object.values(CourseCategory)).optional(),
+  seat: z
+    .number({ message: "Seat must be a number." })
+    .min(0, { message: "Seat cannot be negative." }),
   price: z
     .number({ message: "Price must be a number." })
     .min(0, { message: "Price cannot be negative." }),
@@ -51,9 +51,11 @@ export const updateCourseZodSchema = z.object({
     .max(500, { message: "Description cannot exceed 500 characters." })
     .optional(),
 
-  category: z
-    .string()
-    .max(50, { message: "Category cannot exceed 50 characters." })
+  category: z.enum(Object.values(CourseCategory)).optional(),
+
+  seat: z
+    .number({ message: "Seat must be a number." })
+    .min(0, { message: "Seat cannot be negative." })
     .optional(),
 
   price: z
