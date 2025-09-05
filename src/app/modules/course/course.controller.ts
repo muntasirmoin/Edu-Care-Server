@@ -5,12 +5,24 @@ import { JwtPayload } from "jsonwebtoken";
 import { CourseService } from "./course.service";
 import { catchAsync } from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
+import { ICourse } from "./course.interface";
 
 // Create a new course (Admin only)
 const createCourse = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const verifiedToken = req.user as JwtPayload;
-    const course = await CourseService.createCourse(req.body, verifiedToken);
+
+    console.log(req.body);
+    //
+    const payload: ICourse = {
+      ...req.body,
+      // image: (req.files as Express.Multer.File[]).map((file) => file.path),
+      image: req.file?.path,
+    };
+
+    //
+    // const course = await CourseService.createCourse(req.body, verifiedToken);
+    const course = await CourseService.createCourse(payload, verifiedToken);
 
     sendResponse(res, {
       success: true,

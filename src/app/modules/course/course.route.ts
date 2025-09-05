@@ -7,6 +7,7 @@ import {
   createCourseZodSchema,
   updateCourseZodSchema,
 } from "./course.validation";
+import { multerUpload } from "../../config/multer.config";
 
 const router = Router();
 
@@ -17,8 +18,11 @@ router.get("/:id", CourseControllers.getCourseById);
 // create course
 router.post(
   "/",
-  validateRequest(createCourseZodSchema),
   checkAuth(Role.ADMIN),
+  // multerUpload.array("files"), for multiple image
+  multerUpload.single("file"),
+  validateRequest(createCourseZodSchema),
+
   CourseControllers.createCourse
 );
 
