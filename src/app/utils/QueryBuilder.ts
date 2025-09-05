@@ -7,7 +7,7 @@ export class QueryBuilder<T> {
 
   constructor(modelQuery: Query<T[], T>, query: Record<string, string>) {
     this.modelQuery = modelQuery;
-    this.query = query;
+    this.query = query || {};
   }
 
   filter(): this {

@@ -14,6 +14,11 @@ import { JwtPayload } from "jsonwebtoken";
 import { Role } from "../user/user.interface";
 import { Course } from "../course/course.model";
 import { User } from "../user/user.model";
+import { CartItem } from "../cartItem/cartItem.model";
+import { ICourse } from "../course/course.interface";
+import { Document } from "mongoose";
+
+type CourseDoc = ICourse & Document;
 
 // Create a new enrollment
 const createEnrollment = async (

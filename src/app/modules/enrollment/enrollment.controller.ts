@@ -5,6 +5,7 @@ import { EnrollmentServices } from "./enrollment.service";
 import { catchAsync } from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
 import { JwtPayload } from "jsonwebtoken";
+import { CartItemService } from "../cartItem/cartItem.service";
 
 // Create a new enrollment
 const createEnrollment = catchAsync(

@@ -4,6 +4,7 @@ import { UserRoutes } from "../modules/user/user.route";
 import { AuthRoutes } from "../modules/auth/auth.route";
 import { CourseRoutes } from "../modules/course/course.route";
 import { EnrollmentRoutes } from "../modules/enrollment/enrollment.route";
+import { CartRoutes } from "../modules/cartItem/cartItem.route";
 
 export const router = Router();
 
@@ -23,6 +24,10 @@ const moduleRoutes = [
   {
     path: "/enrollment",
     route: EnrollmentRoutes,
+  },
+  {
+    path: "/cart",
+    route: CartRoutes,
   },
 ];
 

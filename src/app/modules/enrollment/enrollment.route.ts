@@ -50,4 +50,10 @@ router.delete(
   EnrollmentControllers.deleteEnrollment
 );
 
+// router.post(
+//   "/checkout",
+//   checkAuth(Role.USER),
+//   EnrollmentControllers.checkoutCart
+// );
+
 export const EnrollmentRoutes = router;
