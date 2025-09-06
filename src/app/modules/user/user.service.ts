@@ -120,8 +120,24 @@ const updateUser = async (
   return updatedUser;
 };
 
+// get Me
+const getMe = async (userId: string) => {
+  const user = await User.findById(userId).select("-pin");
+  if (!user) {
+    throw new AppError(404, "Not found!Your Profile!");
+  }
+  const timestamp = new Date().toLocaleString();
+  console.log(
+    `[Notification] Your profile Retrieved Successfully! at Time: ${timestamp}`
+  );
+  return {
+    data: user,
+  };
+};
+
 export const UserServices = {
   createUser,
   getAllUsers,
   updateUser,
+  getMe,
 };

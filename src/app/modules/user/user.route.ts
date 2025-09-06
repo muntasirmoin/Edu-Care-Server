@@ -16,4 +16,6 @@ router.patch(
   UserControllers.updateUser
 );
 
+router.get("/me", checkAuth(...Object.values(Role)), UserControllers.getMe);
+
 export const UserRoutes = router;
