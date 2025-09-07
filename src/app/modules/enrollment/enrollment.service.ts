@@ -207,8 +207,17 @@ const getMyEnrollments = async (
   if (user.role === Role.USER) {
     filter.userId = user.userId;
   }
+  const baseQuery = Enrollment.find(filter)
+    .populate({
+      path: "courseId", // populate course info
+      select: "title image price duration category instructor seat description", // select the fields you need
+    })
+    .populate({
+      path: "userId", // optionally populate user info
+      select: "name email",
+    });
 
-  const queryBuilder = new QueryBuilder(Enrollment.find(filter), query);
+  const queryBuilder = new QueryBuilder(baseQuery, query);
   const enrollmentsData = queryBuilder.filter().sort().paginate();
 
   const [data, meta] = await Promise.all([
