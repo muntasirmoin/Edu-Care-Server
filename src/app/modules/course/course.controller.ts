@@ -40,6 +40,7 @@ const updateCourse = catchAsync(
     const verifiedToken = req.user as JwtPayload;
 
     const payload = req.body;
+    console.log("update course", req.body, courseId);
     const course = await CourseService.updateCourse(
       courseId,
       payload,

@@ -3,4 +3,8 @@ export const courseSearchableFields = [
   "description",
   "category",
   "instructor",
+  "seat",
+  "price",
+  "duration",
+  "status",
 ];
