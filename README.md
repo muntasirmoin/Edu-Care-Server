@@ -1,4 +1,4 @@
-<h1 align="center">📖 Edu Care 📖 </h1>
+<h1 align="center">🎓 Edu Care 🎓  </h1>
 <h2 align="center">🚀 Edu Care API Server 🚀</h2>
 <h3 align="center">Develop Edu Care course enrollment System using Express, TypeScript, and MongoDB. </h3>
 
@@ -9,35 +9,29 @@
 
 ---
 
-**Vercel Deploy Link**
+## 🚀 Key Features
 
-- Backend Deploy
+### 🌍 Public Access (Anyone can view)
 
-```bash
-https://edu-care-server-ten.vercel.app
-```
+- 🏠 **Home Page** – Modern landing page showcasing featured courses and information.
+- 📚 **Courses Page** – Browse all available courses with details.
+- 📖 **Course Details** – View specific course information (only logged-in users can enroll).
+- ℹ️ **About, FAQ, Contact** – Informational pages for visitors.
+- 🔑 **Authentication** – Secure login & registration system.
 
-- Frontend Deploy
+### 👤 User Role (Student Dashboard)
 
-```bash
-https://edu-care-client-flax.vercel.app
-```
+- 🎯 **Course Enrollment** – Enroll in available courses.
+- 🛒 **Cart Management** – Add/remove courses before confirming enrollment.
+- 📝 **Enrollment History** – View enrolled courses.
+- ⚙️ **Profile & Overview** – Personal details and enrollment status.
 
----
+### 🛠️ Admin Role (Admin Dashboard)
 
-**Github Code Link**
-
-- Backend
-
-```bash
-https://github.com/muntasirmoin/Edu-Care-Server.git
-```
-
-- Frontend
-
-```bash
-https://github.com/muntasirmoin/Edu-Care-Client.git
-```
+- 📚 **Course Management** – Create, update, and delete courses.
+- 👥 **User Management** – View and remove users.
+- 📝 **Enrollment Management** – Track all student enrollments.
+- 📊 **Statistics Dashboard** – Overview of courses, users, and enrollment data.
 
 ---
 
@@ -102,41 +96,39 @@ This document lists all API endpoints available in the EduCare Course Enrollment
 
 ---
 
-## Features
+---
 
-### 1. Authentication & Multi‑Role Access
+**Vercel Deploy Link**
 
-- Email/password authentication using **JWT access + refresh tokens**.
-- Roles: **ADMIN** and **USER (Student)**.
-- **Route guards**, component-level permissions, and **RBAC middleware** for secure access control.
+- Backend Deploy
 
-### 2. Course Management
+```bash
+https://edu-care-server-ten.vercel.app
+```
 
-- **Admin CRUD operations** for courses.
+- Frontend Deploy
 
-### 3. Course Enrollment
-
-- Add courses to **Cart**.
-- Proceed to **Checkout**.
-
-### 4. My Enrollments Page
-
-- Users can view all their **enrolled courses**.
-- Track recent activity.
+```bash
+https://edu-care-client-flax.vercel.app
+```
 
 ---
 
-## Dashboards & Analytics
+**Github Code Link**
 
-### Admin Dashboard
+- Backend
 
-- Total **users**, **courses**, and **enrollments**.
-- Quick overview of platform activity.
+```bash
+https://github.com/muntasirmoin/Edu-Care-Server.git
+```
 
-### User Navbar
+- Frontend
 
-- List of **enrolled courses**.
-- **Quick access** to courses.
+```bash
+https://github.com/muntasirmoin/Edu-Care-Client.git
+```
+
+---
 
 ## 🧰 Tech Stack
 
