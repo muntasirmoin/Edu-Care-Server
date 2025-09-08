@@ -9,6 +9,7 @@ import { catchAsync } from "../../utils/catchAsync";
 import { createUserTokens } from "../../utils/userToken";
 import { sendResponse } from "../../utils/sendResponse";
 import { setAuthCookie } from "../../utils/setAuthCookie";
+import { envVars } from "../../config/env";
 
 const credentialsLogin = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -59,13 +60,17 @@ const logout = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     res.clearCookie("accessToken", {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      // secure: false,
+      // sameSite: "lax",
+      secure: envVars.NODE_ENV === "production",
+      sameSite: "none",
     });
     res.clearCookie("refreshToken", {
       httpOnly: true,
-      secure: false,
-      sameSite: "lax",
+      // secure: false,
+      // sameSite: "lax",
+      secure: envVars.NODE_ENV === "production",
+      sameSite: "none",
     });
 
     sendResponse(res, {
