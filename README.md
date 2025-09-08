@@ -3,7 +3,7 @@
 <h3 align="center">Develop Edu Care course enrollment System using Express, TypeScript, and MongoDB. </h3>
 
 <p align="center">
-  Edu Care delivers a clean, modern learning marketplace: discover courses, inspect details, enroll , and track learning. The app features authentication with multi‑role permissions, responsive UI, analytics dashboards, and a purchase flow.
+  Edu Care delivers a clean, modern learning marketplace: discover courses, inspect details, enroll , and track learning. The app features authentication with multi‑role permissions, responsive UI, analytics dashboards.
 
 </p>
 
