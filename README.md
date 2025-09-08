@@ -1,4 +1,4 @@
-<h1 align="center">📖 Edu Care📖 </h1>
+<h1 align="center">📖 Edu Care 📖 </h1>
 <h2 align="center">🚀 Edu Care API Server 🚀</h2>
 <h3 align="center">Develop Edu Care course enrollment System using Express, TypeScript, and MongoDB. </h3>
 
@@ -41,7 +41,7 @@ https://github.com/muntasirmoin/Edu-Care-Client.git
 
 ---
 
-# EduCare API Reference 🚀
+# Edu Care API Reference 🚀
 
 This document lists all API endpoints available in the EduCare Course Enrollment System.
 
@@ -97,8 +97,7 @@ This document lists all API endpoints available in the EduCare Course Enrollment
 | GET    | `/my-enrollments` | Get enrollments of logged-in user | USER/ADMIN |
 | GET    | `/`               | Get all enrollments               | ADMIN      |
 | GET    | `/:id`            | Get single enrollment by ID       | ADMIN      |
-| POST   | `/`               | Create a new enrollment           | ADMIN/USER |
-| PATCH  | `/:id`            | Update an enrollment              | ADMIN/USER |
+| POST   | `/`               | Create a new enrollment           | USER       |
 | DELETE | `/:id`            | Soft delete an enrollment         | ADMIN      |
 
 ---
