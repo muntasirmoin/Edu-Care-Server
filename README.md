@@ -41,6 +41,68 @@ https://github.com/muntasirmoin/Edu-Care-Client.git
 
 ---
 
+# EduCare API Reference 🚀
+
+This document lists all API endpoints available in the EduCare Course Enrollment System.
+
+---
+
+## **1. Authentication Routes** 🔑 (`/api/auth`)
+
+| Method | Endpoint    | Description                   | Access |
+| ------ | ----------- | ----------------------------- | ------ |
+| POST   | `/register` | Create a new user             | Public |
+| POST   | `/login`    | Login with email and password | Public |
+| POST   | `/logout`   | Logout user                   | Public |
+
+---
+
+## **2. User Routes** 👤 (`/api/user`)
+
+| Method | Endpoint | Description                     | Access     |
+| ------ | -------- | ------------------------------- | ---------- |
+| GET    | `/`      | Get all users                   | ADMIN only |
+| PATCH  | `/:id`   | Update user info                | ADMIN/USER |
+| GET    | `/me`    | Get current logged-in user info | ADMIN/USER |
+
+---
+
+## **3. Course Routes** 📚 (`/api/course`)
+
+| Method | Endpoint | Description          | Access |
+| ------ | -------- | -------------------- | ------ |
+| GET    | `/`      | Get all courses      | Public |
+| GET    | `/:id`   | Get course by ID     | Public |
+| POST   | `/`      | Create a new course  | ADMIN  |
+| PATCH  | `/:id`   | Update course info   | ADMIN  |
+| DELETE | `/:id`   | Soft delete a course | ADMIN  |
+
+---
+
+## **4. Cart Routes** 🛒 (`/api/cart`)
+
+| Method | Endpoint    | Description                         | Access |
+| ------ | ----------- | ----------------------------------- | ------ |
+| POST   | `/`         | Add a course to cart                | USER   |
+| POST   | `/checkout` | Checkout cart                       | USER   |
+| GET    | `/`         | Get all cart items for current user | USER   |
+| DELETE | `/:id`      | Remove an item from cart            | USER   |
+
+---
+
+## **5. Enrollment Routes** 🎓 (`/api/enrollment`)
+
+| Method | Endpoint          | Description                       | Access     |
+| ------ | ----------------- | --------------------------------- | ---------- |
+| GET    | `/my-enrollments` | Get enrollments of logged-in user | USER/ADMIN |
+| GET    | `/`               | Get all enrollments               | ADMIN      |
+| GET    | `/:id`            | Get single enrollment by ID       | ADMIN      |
+| POST   | `/`               | Create a new enrollment           | ADMIN/USER |
+| PATCH  | `/:id`            | Update an enrollment              | ADMIN/USER |
+| DELETE | `/:id`            | Soft delete an enrollment         | ADMIN      |
+
+---
+
 ## Features
 
 ### 1. Authentication & Multi‑Role Access
