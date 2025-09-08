@@ -91,7 +91,7 @@ const updateUser = async (
   }
 
   if (payload.isDeleted) {
-    if (decodedToken.role === Role.USER || decodedToken.role === Role.ADMIN) {
+    if (decodedToken.role === Role.USER) {
       throw new AppError(
         httpStatus.FORBIDDEN,
         "You are not authorized to delete user"

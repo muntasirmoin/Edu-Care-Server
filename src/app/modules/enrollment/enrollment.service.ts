@@ -78,16 +78,19 @@ const createEnrollment = async (
 
 // Get all enrollments with optional query
 const getAllEnrollments = async (query: Record<string, string>) => {
-  const queryBuilder = new QueryBuilder(
-    Enrollment.find({ isDeleted: false }),
-    query
-  );
-  const enrollmentsData = queryBuilder
-    .filter()
-    .search(enrollmentSearchableFields)
-    .sort()
-    .fields()
-    .paginate();
+  let filter: Record<string, any> = { isDeleted: false };
+  const baseQuery = Enrollment.find(filter)
+    .populate({
+      path: "courseId", // populate course info
+      select: "title image price duration category instructor seat description", // select the fields you need
+    })
+    .populate({
+      path: "userId", // optionally populate user info
+      select: "name email",
+    });
+
+  const queryBuilder = new QueryBuilder(baseQuery, query);
+  const enrollmentsData = queryBuilder.filter().sort().paginate();
 
   const [data, meta] = await Promise.all([
     enrollmentsData.build(),
