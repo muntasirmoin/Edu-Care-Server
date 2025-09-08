@@ -1,5 +1,5 @@
-<h1 align="center">Edu Care</h1>
-<h2 align="center">Edu Care API Server</h2>
+<h1 align="center">📖 Edu Care📖 </h1>
+<h2 align="center">🚀 Edu Care API Server 🚀</h2>
 <h3 align="center">Develop Edu Care course enrollment System using Express, TypeScript, and MongoDB. </h3>
 
 <p align="center">
